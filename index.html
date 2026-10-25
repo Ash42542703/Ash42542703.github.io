@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ash's Portfolio</title>
 
+    <link rel="stylesheet" href="https://jsdelivr.net">
+    <style>
+      body {
+        scroll-behavior: smooth;
+      }
+      header {
+        position: stick;
+        top: 0;
+        background: var(--pico-background-color);
+        border-bottom: var(--pico-border-width) solid var(--pico-muted-border-color);
+        z-index: 1000;
+      }
+      section {
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--pico-muted-border-color);
+      }
+      .profile-container {
+        display: flex;
+        flex-wrap: wrap:
+        gap: 2rem;
+        aligin-items: center;
+      }
+      .profile-img{
+        border-radius: 50%;
+        max-width: 200px;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      .profile-text {
+        flex: 1;
+        min-width: 300px;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-colums:repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+      projects-card {
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="container">
+      <nav aria-label="Main Navigation">
+        <ul>
+          <li><strong>My Portfolio</strong></li>
+        </ul>
+        <ul>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#intrests">Interests</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <section id="about" aria-labelledby="about-heading">
+        <div class="profile-container">
+          <img src="https://placehold.co" alt="Professional photo of me" class="profile-img">
+          <div class="profile-text">
+            <h2 id="about-heading"> All About Me!!</h2>
+              <p>Hello! My name is Ashton (Ash) Laufer. I am a Computer Science Major at St. Mary's College of Maryland. I am currently a senior planning to graduate in December!</p>
+              <p>Welcome to my portfoilo website, where you can learn more about me, see my interests, see projects that I have done, and how to contact me!</p>
+          </div>
+      </section>
+
+      <section id="interests" aria-labelledby="interests-heading">
+        <h2 id="interest-headding">Interests</h2>
+        <p>If I am not busy working at the on campus coffee shop, in class, grading, or working on school work, I am most likely doing one of these things:</p>
+        <ul>
+          <li><strong>Playing video games: I love spending hours playing Legend of Zelda: Tears of the Kingdom, Mario Kart World, Super Smash Bros, and so many others!</strong></li>
+          <li><strong>Designing on Autodesk Inventor: I could spend an entire afternoon </strong></li>
+        </ul>
+      </body>
