@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ash's Portfolio</title>
 
-    <link rel="stylesheet" href="https://jsdelivr.net">
+   <link rel="stylesheet" href="https://jsdelivr.net">
     <style>
       :root{
         --pico-primary: #03877c;
@@ -18,14 +18,14 @@
       header {
         position: sticky;
         top: 0;
-        background: rgba(20, 24, 33, 0.95);
+        background: rgba(29, 37, 49, 0.95);
         backdrop-filter: blur(8px);
         border-bottom: var(--pico-border-width) solid var(--pico-muted-border-color);
         z-index: 1000;
       }
       header nav{
         display: flex;
-        justify-context: space-between;
+        justify-content: space-between;
         align-items: center;
         width: 100%;
       }
@@ -36,16 +36,16 @@
         padding:0;
         list-style: none;
         gap: 1.5rem;
-        
+      }
       section {
         padding: 2.5rem 0;
-        border-bottom: 1px solid var(--pico-muted-border-color);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
       .profile-container {
         display: flex;
-        flex-wrap: wrap:
+        flex-wrap: wrap;
         gap: 4rem;
-        aligin-items: center;
+        align-items: center;
       }
       .profile-img{
         border-radius: 50%;
@@ -60,23 +60,25 @@
         flex: 1;
         min-width: 300px;
       }
-      .intrests-list li{
+      .interests-list li{
         margin-bottom: 1rem;
       }
       .projects-grid {
         display: grid;
-        grid-template-colums: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1.5rem;
       }
-      projects-card {
+      .projects-card {
         margin-bottom: 0;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
         .project-card:hover {
           transform: translateY(-4px);
-          box-shadow: 0 8px 24px rgba(3, 135, 124, 0.15);
+          box-shadow: 0 8px 24px rgba(3, 135, 124, 0.25);
           border-color: var(--pico-primary);
         }
         .badge-container {
@@ -89,14 +91,14 @@
           font-size: 0.75rem;
           padding: 0.2rem 0.6rem;
           border-radius: 4px;
-          background: rgba(3, 135, 124, 0.1);
-          color: var(--pico-primary);
-          border: 1px solid rgba(3, 135, 124, 0.3);
+          background: rgba(3, 135, 124, 0.15);
+          color: #049488;
+          border: 1px solid rgba(3, 135, 124, 0.4);
           cursor: pointer;
-          transition: aal 0.2s ease;
+          transition: all 0.2s ease;
         }
         .tech-badge:hover {
-          background:hover;
+          background: var(--pico-primary);
             background: var(--pico-primary);
             color: #ffffff;
           }
