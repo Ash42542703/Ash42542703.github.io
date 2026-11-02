@@ -6,32 +6,38 @@
     <title>Ash's Portfolio</title>
     
     <style>
-      :root{
-        --bg-color: #141821;
-        --card-bg: #1d2531;
-        --text-color: #e2e8f0;
-        --text-muted: #94a3b8;
-        --primary: #03877c;
-        --primary-hover: #026b62;
+      /* --- Custom CSS Variables & Dark Mode Baseline --- */
+      :root {
+        --bg-color: #141821;          /* Pure dark canvas background */
+        --card-bg: #1d2531;          /* Slightly lighter slate for cards/header */
+        --text-color: #e2e8f0;       /* High-contrast accessible light text */
+        --text-muted: #94a3b8;      /* Soft gray for descriptions/dates */
+        --primary: #03877c;         /* Your exact teal accent color */
+        --primary-hover: #026b62;   /* Darker teal for interactive states */
         --border-color: rgba(255, 255, 255, 0.1);
       }
-      *{
+
+      * {
         box-sizing: border-box;
       }
+
       body {
         margin: 0;
         padding: 0;
-        font-family: -apple-system, BlinkMacSystemFOnt, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         background-color: var(--bg-color);
         color: var(--text-color);
         line-height: 1.6;
         scroll-behavior: smooth;
       }
-      .container{
+
+      .container {
         max-width: 1100px;
         margin: 0 auto;
         padding: 0 1.5rem;
       }
+
+      /* --- 1. Global Inline Sticky Navigation Bar --- */
       header {
         position: sticky;
         top: 0;
@@ -40,59 +46,73 @@
         border-bottom: 1px solid var(--border-color);
         z-index: 1000;
       }
-      header nav{
+
+      header nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 70px;
       }
-      header strong{
+
+      header strong {
         font-size: 1.25rem;
         color: var(--primary);
       }
+
       header ul {
         display: flex;
         margin: 0;
-        padding:0;
+        padding: 0;
         list-style: none;
         gap: 1.5rem;
       }
-      header a{
+
+      header a {
         color: var(--text-color);
         text-decoration: none;
         font-weight: 500;
         font-size: 0.95rem;
         transition: color 0.2s ease;
       }
-      header a:hover{
+
+      header a:hover {
         color: var(--primary);
       }
-      main{
+
+      /* --- Layout Sections & Spacing Controls --- */
+      main {
         padding-top: 1rem;
       }
+
       section {
-        padding: 3rem 0;
-        border-bottom: 1px solid var(--border-color)
+        padding: 3rem 0; /* Tightened section spacing gaps */
+        border-bottom: 1px solid var(--border-color);
       }
-      h2{
+
+      h2 {
         font-size: 2rem;
         margin-top: 0;
         margin-bottom: 1.5rem;
         color: #ffffff;
       }
-      ul{
+
+      ul {
         padding-left: 1.5rem;
       }
-      ul li{
-        margin-bottom: 1rem;
+
+      ul li {
+        margin-bottom: 1rem; /* Generous bullet list gaps */
       }
+
+      /* --- 2. About Me Component Structure --- */
       .profile-container {
         display: flex;
         flex-wrap: wrap;
-        gap: 4rem;
+        gap: 4rem; /* Wide spacing block separating picture and paragraph */
         align-items: center;
       }
-      .profile-img{
+
+      .profile-img {
         border-radius: 50%;
         max-width: 220px;
         width: 100%;
@@ -101,78 +121,96 @@
         border: 3px solid var(--primary);
         box-shadow: 0 0 20px rgba(3, 135, 124, 0.25);
       }
+
       .profile-text {
         flex: 1;
         min-width: 300px;
       }
-      .experience-item{
+
+      /* --- Experience Block Typographies --- */
+      .experience-item {
         margin-bottom: 2rem;
       }
-      .experience-header{
+
+      .experience-header {
         font-size: 1.2rem;
         font-weight: bold;
         color: #ffffff;
         margin-bottom: 0.25rem;
       }
-      .experience-date{
+
+      .experience-date {
         font-size: 0.9rem;
         color: var(--text-muted);
-        margin-bottom: 0.75rem:
+        margin-bottom: 0.75rem;
       }
+
+      /* --- 3. Interactive Projects Grid & Hover Cards --- */
       .projects-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 1.5rem;
       }
-      .projects-card {
+
+      .project-card {
         background-color: var(--card-bg);
         border: 1px solid var(--border-color);
         border-radius: 8px;
         padding: 1.5rem;
         display: flex;
         flex-direction: column;
-        justify-context: space-between;
+        justify-content: space-between;
         transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       }
-      .project-card h3{
+
+      .project-card h3 {
         margin-top: 0;
         margin-bottom: 0.75rem;
         font-size: 1.25rem;
         color: #ffffff;
       }
-      .project-card p{
+
+      .project-card p {
         color: var(--text-muted);
         font-size: 0.95rem;
         margin-bottom: 1rem;
         flex-grow: 1;
       }
-        .project-card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 8px 24px rgba(3, 135, 124, 0.2);
-          border-color: var(--primary);
-        }
-        .badge-container {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem;
-          margin-bottom: 1.5rem;
-        }
-        .tech-badge {
-          font-size: 0.75rem;
-          font-weight: 600;
-          padding: 0.2rem 0.6 rem;
-          border-radius: 4px;
-          background: rgba(3, 135, 124, 0.15);
-          color: #049488;
-          border: 1px solid rgba(3, 135, 124, 0.3);
-          cursor: pointer;
-          transition: all 0.2s ease;
-        }
-        .tech-badge:hover {
-          background: var(--primary);
-          color: #ffffff;
-          }
-      .btn{
+
+      /* --- WOW FACTOR: Elevation Animations --- */
+      .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(3, 135, 124, 0.2);
+        border-color: var(--primary);
+      }
+
+      /* --- Interactive Tag Badges --- */
+      .badge-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .tech-badge {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.2rem 0.6rem;
+        border-radius: 4px;
+        background: rgba(3, 135, 124, 0.15);
+        color: #049488;
+        border: 1px solid rgba(3, 135, 124, 0.3);
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .tech-badge:hover {
+        background: var(--primary);
+        color: #ffffff;
+      }
+
+      /* --- Action Buttons --- */
+      .btn {
         display: inline-block;
         text-align: center;
         text-decoration: none;
@@ -186,38 +224,46 @@
         transition: all 0.2s ease;
         width: max-content;
       }
-      .btn-hover{
+
+      .btn:hover {
         background: var(--primary);
         color: #ffffff;
       }
-      .contact-grid{
+
+      /* --- 4. Custom Responsive Contact Alignment Grid --- */
+      .contact-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1.5rem;
         margin-top: 1rem;
       }
-      .contact-card{
+
+      .contact-card {
         background: var(--card-bg);
         border: 1px solid var(--border-color);
-        padding: 1.25rem; 
+        padding: 1.25rem;
         border-radius: 6px;
         text-align: center;
       }
-      .contact-card strong{
+
+      .contact-card strong {
         display: block;
         margin-bottom: 0.5rem;
         color: #ffffff;
       }
-      .contact-card a{
+
+      .contact-card a {
         color: var(--primary);
         text-decoration: none;
         font-weight: 500;
         transition: color 0.2s ease;
       }
-      .contact-card a:hover{
+
+      .contact-card a:hover {
         color: #ffffff;
       }
-      footer{
+
+      footer {
         text-align: center;
         padding: 2rem 0;
         color: var(--text-muted);
