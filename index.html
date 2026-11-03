@@ -7,6 +7,7 @@
     
     <style>
       :root{
+        /* dark mode */
         --bg-color: #141821;
         --card-bg: #1d2531;
         --text-color: #e2e8f0;
@@ -14,6 +15,14 @@
         --primary: #03877c;
         --primary-hover: #026b62;
         --border-color: rgba(255, 255, 255, 0.1);
+        /* light mode */
+        .light-theme{
+          --bg-color: #f8fafc;
+          --card-bg: #ffffff;
+          --text-color: #1e293b;
+          --text-muted: #64748b;
+          --border-color: rgba(0, 0, 0, 0.1);
+        }
       }
       *{
         box-sizing: border-box;
@@ -237,6 +246,11 @@
           <li><a href="#experience">Experience</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact Me</a></li>
+          <li>
+            <button id="theme-toggle" class="btn" style="padding: 0.25rem 0.75rem; font-size:0.85;" aria-label="Toggle light and dark mode">
+              ☀️ Light Mode
+            </button>
+          </li>
         </ul>
       </nav>
     </header>
@@ -349,6 +363,17 @@
     </main>
     <footer class="container">
       <small>@ 2026 Personal Developer Portfolio. All rights reserved.</small>
-    </footer>    
+    </footer>
+    <script>
+      const toggleBtn = document.getElementById('theme-toggle');
+      toggle.Btn.addEventListener('click', () => {
+        document.body.classList.toggle('light-theme');
+        if (document.body.classList.contains('light-theme')){
+          toggle.Btn.innerHTML='🌙 Dark Mode';
+        }else{
+          toggleBtn.innerHTML='☀️ Light Mode';
+        }
+      });                       
+    </script>
   </body>
 </html>
