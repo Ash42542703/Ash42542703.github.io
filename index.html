@@ -50,18 +50,20 @@
         backdrop-filter: blur(8px);
         border-bottom: 1px solid var(--border-color);
         z-index: 1000;
+        transition: background-color 0.2 ease;
       }
-      @media (max-width:786px){
       header nav{
+        display: flex;
         flex-direction: column;
+        justify-context: space-between;
         align-items: center;
         text-align: center;
         padding: 1rem 0;
-        height: auto;
+        height: 70px;
       }
       header strong{
         margin-bottom: 0.75rem;
-        font-size: 1.4rem;
+        font-size: 1.25rem;
         color: var(--primary);
       }
       header ul {
@@ -71,13 +73,14 @@
         list-style: none;
         justify-context: center;
         flex-wrap: wrap;
-        gap: 0.5rem 1rem;
+        gap: 1.5rem;
+        align-items: center;
       }
       header a{
         color: var(--text-color);
         text-decoration: none;
         font-weight: 500;
-        font-size: 0.85rem;
+        font-size: 0.95rem;
         padding: 0.25rem 0.5rem;
         display: inline-block;
         transition: color 0.2s ease;
@@ -89,8 +92,36 @@
         padding-top: 1rem;
       }
       section {
-        padding: 3rem 0;
+        padding: 2.5rem 0;
         border-bottom: 1px solid var(--border-color)
+      }
+      @media (max-width:786px){
+        header nav{
+          flex-direction: column !important;
+          align-items: center !important;
+          text-align: center !important;
+          padding: 1rem 0 !important;
+          height: auto !important;
+        }
+        header strong{
+          margin-bottom: 0.75 rem !important;
+          font-size: 1.4rem;
+        }
+        header ul {
+          justify-content: center !important;
+          flex-wrap: wrap !important;
+          gap: 0.5 rem 1rem !important;
+        }
+        header a {
+          font-size: 0.85rem !important;
+          padding: 0.25rem !important;
+          display: inline-block !important;
+        }
+        .profile-container{
+          gap: 2rem !important;
+          justify-content: center !important;
+          text-align: center !important;
+        }
       }
       h2{
         font-size: 2rem;
@@ -111,7 +142,6 @@
         align-items: center;
         justify-context: center;
         text-align: center;
-      }
       }
       .profile-img{
         border-radius: 50%;
@@ -259,7 +289,7 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact Me</a></li>
           <li>
-            <button id="theme-toggle" class="btn" style="padding: 0.25rem 0.75rem; font-size:0.85;" aria-label="Toggle light and dark mode"></button>
+            <button id="theme-toggle" class="btn" style="padding: 0.25rem 0.75rem; font-size:0.85;" aria-label="Toggle light and dark mode">☀️ Light Mode</button>
           </li>
         </ul>
       </nav>
@@ -382,12 +412,12 @@
       const toggleBtn = document.getElementById('theme-toggle');
       toggleBtn.addEventListener('click', () => {
         document.body.classList.toggle('light-theme');
-        if (document.body.classList.contains('light-theme')){
-          toggle.Btn.innerHTML='🌙 Dark Mode';
-        }else{
-          toggleBtn.innerHTML='☀️ Light Mode';
-        }
-      });                       
+          if (document.body.classList.contains('light-theme')){
+            toggleBtn.innerText='🌙 Dark Mode';
+          }else{
+            toggleBtn.innerText='☀️ Light Mode';
+          }  
+        });                       
     </script>
   </body>
 </html>
